@@ -559,6 +559,7 @@ The topics which we were introduced to were
 •	This concludes Day 5 and the workshop
 
 
-
+## Vote of Thanks
+I would like to thank the entire team at VSD for organising this workshop. As well I would like to extend my sincere thanks and appreciation to Mr. Shon Taware and Mr, Kunal Ghosh for their relenetless support. I would like to wish the entire VSD team and fellow participants from the workshop all the best for their future endeavours.
 
 
