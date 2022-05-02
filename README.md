@@ -402,14 +402,14 @@ Without hierarchial design:
 
 This completes Day 3
 
-Day 4:
+## Day 4:
 Day 4 was titled ‘GLS blocking vs non blocking and synthesis-simulation’
 The topics which we were introduced to were
 •	GLS Synthesis-Simulation mismatch and blocking-non blocking statements(theory)
 •	GLS and synthesis simulation mismatch(lab)
 •	Synth-sim mismatch for blocking statement(lab)
 
-Gate Level Simulation
+### Gate Level Simulation
 GLS stands for Gate Level Simulation. We have been doing the simulation and verification of our rtl design. GLS helps us perform verification and simulation of our synthesized design.
 GLS is a very useful tool as it helps us fix design errors quite early .
 
