@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/67062356/166248517-93e7886f-9bba-4859-8aef-e4857320900a.png)
+
 # RTL-design-using-Verilog-with-SKY130-Technology
 a Workshop by Kunal Ghosh and VSDIAT
 ## Day 1:
@@ -272,4 +274,283 @@ o	When one signals reach a combinational ckt and the others do not and hence the
 
 
 This ends workshop day 2
+
+## Day 3:
+Day 3 was titled ‘combinational and sequential optimisations’
+The topics which we were introduced to were
+•	Introduction to Optimisations(theory)
+•	Combinational Logic Optimisations(lab)
+•	Sequential Logic Optimisations(lab)
+•	Sequential Optimisations for unused outputs(theory)
+### Introduction to Optimisations
+Logic Optimisation:
+•	Combinational Logic Optimisation
+o	Squeezing the logic to get most optimised design(Area and power savings)
+o	Constant Propagation(Direct Optimisation)
+
+![image](https://user-images.githubusercontent.com/67062356/166248799-33d0540c-5628-403b-bae1-c18a060d5320.png)
+
+ 
+o	Boolean Logic Optimisation
+ 
+ ![image](https://user-images.githubusercontent.com/67062356/166248829-041e8419-d066-4c51-abd7-b606dd9fa31f.png)
+
+
+•	Sequential Logic Optimisation
+o	Sequential Constant(eg of DFF with ip grounded and reset signal, with nand gate, logic shortens to form
+
+![image](https://user-images.githubusercontent.com/67062356/166248912-b52f7049-5ba9-452c-a019-3b1c3b233dd7.png)
+
+ 
+o	Y=1, reset example for logic which cannot be optimised
+•	Advanced Optimisations
+o	Cloning
+ 
+ 
+ ![image](https://user-images.githubusercontent.com/67062356/166248977-8d21eccc-b51d-4a65-a84e-9fa7730d1e7c.png)
+
+
+o	Retiming
+
+![image](https://user-images.githubusercontent.com/67062356/166249022-e39480a6-bf91-4d59-8cd7-7b0410bbd2da.png)
+
+ 
+o	State Optimisation
+	Optimisation of unused states
+	This is optimisation of unused states. Using this technique, we can come up with the most optimised state machine.
+
+Combinational Logic Optimisations(lab)
+
+In this lab files  we use the opt_check files from the library
+•	Our first example for optimisation was opt_check.v
+o	We see the file which is a 2:1 mux is optimised into a 2 input and gate
+ 
+ 
+![image](https://user-images.githubusercontent.com/67062356/166249259-6f4b40f6-1b6d-49a0-bdf6-d1879cf3b67a.png)
+
+ ![image](https://user-images.githubusercontent.com/67062356/166249290-1661327b-601d-487b-adc5-271eeb5ccd74.png)
+
+
+•	The next example is opt_check2 which is optimised as an or gate after synthesis
+
+![image](https://user-images.githubusercontent.com/67062356/166249327-e362c258-76fa-430c-9cf6-ecdde3f96d90.png)
+
+ 
+•	The next example was opt_check3.v which was synthesized as a 3 input and gate
+
+![image](https://user-images.githubusercontent.com/67062356/166249356-f04314d1-b03a-49af-8a02-45527d096bc7.png)
+
+ 
+•	We further synthesized multiple_modules_opt and opt_check4
+
+![image](https://user-images.githubusercontent.com/67062356/166249415-a031d80b-2c86-4a28-89a0-0869f4824299.png)
+
+ ![image](https://user-images.githubusercontent.com/67062356/166249441-8b08416b-28e9-4bb7-8c43-15878448dc82.png)
+
+
+ 
+Sequential Logic Optimisations(lab):
+In these lab sessions we looked at sequential optimisation techniques, all the file names were along dff_const
+•	In the dff_const1 file we analysed the timing graphs to conclude that it cannot be treated as a sequential constant. So we look for the synthesis tool output to support our conclusions.
+ 
+ ![image](https://user-images.githubusercontent.com/67062356/166249489-1af88039-2dcd-495a-aa05-39cba404cd68.png)
+
+![image](https://user-images.githubusercontent.com/67062356/166249534-26e5940a-1f09-4c21-b144-41c60e2921ae.png)
+
+ 
+•	As visible in the GTKWave output, this circuit cannot be treated as a sequential constant
+•	And that is confirmed by the yosys dot viewer output
+
+•	On the other hand we see that dff_const can be interpreted as a sequential constant
+•	This is also confirmed by the simulation and synthesis output 
+  
+  ![image](https://user-images.githubusercontent.com/67062356/166249574-8ac7ece9-88b7-4946-ac5a-65a868cd41b3.png)
+![image](https://user-images.githubusercontent.com/67062356/166249623-8b0066f5-3eb5-4d83-867d-c189fb60b728.png)
+
+![image](https://user-images.githubusercontent.com/67062356/166249663-da8d7579-2ba4-4e05-a315-87b2c0bae059.png)
+
+In the next example dff_const3 we see that none of the flops are sequential constants and that is confirmed by the simulation and synthesis outputs
+ 
+ ![image](https://user-images.githubusercontent.com/67062356/166249685-158bdde0-5c81-4e94-913e-191904f23147.png)
+ 
+ ![image](https://user-images.githubusercontent.com/67062356/166249708-0a65842b-d007-4629-bae5-de985ae80af2.png)
+
+
+ 
+In the similar fashion we executed dff_const4 and dff_const5 in which the former resulted in a sequential constant whereas the latter led to synthesis of dffs
+ 
+ ![image](https://user-images.githubusercontent.com/67062356/166249727-b22b8198-af2f-43f8-9a1a-05b03ed174f9.png)
+
+ ![image](https://user-images.githubusercontent.com/67062356/166249745-0dd67f8d-bb2d-4196-be90-51dba7b80f9f.png)
+ 
+ ![image](https://user-images.githubusercontent.com/67062356/166249765-d0c297d0-6493-4cc5-9ad7-64fdd6ae5578.png)
+
+![image](https://user-images.githubusercontent.com/67062356/166249781-8c3a20b5-c94e-4e47-aebc-820209b5cf17.png)
+
+ 
+
+•	Next we saw unused outputs optimisation in which if a particular output is not useful in the code its optimised we use count_opt in the simulation and synthesis
+ 
+ 
+ ![image](https://user-images.githubusercontent.com/67062356/166249805-24bb7329-1144-491e-bc4e-8504271bc2f9.png)
+
+
+Without hierarchial design: 
+
+![image](https://user-images.githubusercontent.com/67062356/166249830-0e23c478-8753-4272-84f8-59f73dbd3823.png)
+
+
+This completes Day 3
+
+Day 4:
+Day 4 was titled ‘GLS blocking vs non blocking and synthesis-simulation’
+The topics which we were introduced to were
+•	GLS Synthesis-Simulation mismatch and blocking-non blocking statements(theory)
+•	GLS and synthesis simulation mismatch(lab)
+•	Synth-sim mismatch for blocking statement(lab)
+
+Gate Level Simulation
+GLS stands for Gate Level Simulation. We have been doing the simulation and verification of our rtl design. GLS helps us perform verification and simulation of our synthesized design.
+GLS is a very useful tool as it helps us fix design errors quite early .
+
+![image](https://user-images.githubusercontent.com/67062356/166250052-5f1baa34-bdc7-46b8-aeba-80cf25891332.png)
+
+
+Synthesis - Simulation mismatch arises due to the following reasons:
+•	Missing sensitivity list
+
+![image](https://user-images.githubusercontent.com/67062356/166250081-47d33d46-ac3e-4579-944e-856017467d24.png)
+
+ 
+•	Blocking vs Non-blocking assignments
+
+![image](https://user-images.githubusercontent.com/67062356/166250126-ad675587-87c0-4940-b951-9a2864e2ba1f.png)
+
+ 
+•	Non standard verilog coding
+•	The first example bad_mux.v shows us an example of missing sensitivity list:
+ 
+ 
+ ![image](https://user-images.githubusercontent.com/67062356/166250157-93b9f9f4-2e4a-4ecc-a098-ec2016372835.png)
+
+
+•	The second example bad_mux.v shows us an example of missing sensitivity list:
+
+![image](https://user-images.githubusercontent.com/67062356/166250193-31f9e64f-e1ff-48e5-bd67-33567d480fe4.png)
+
+   
+We see the rtl and netlist simulations(GLS) not matching, this is a case of synthesis simulation mismatch.
+
+Next we look at blocking vs non blocking assignments in Verilog:
+
+![image](https://user-images.githubusercontent.com/67062356/166250231-7d3047d7-f7aa-4fbf-b92f-116d29eee0f9.png)
+
+ 
+Blocking vs Non-blocking assignments also cause simulation-synthesis mismatch. These assignment statements are used in 'always' blocks and special care needs to be take when using them. The main reason to use either Blocking or Nonblocking assignments is to generate either combinational or sequential logic
+Now we see a synthesis simulation mismatch due to use of blocking statements in the code blocking_caveats.v
+
+![image](https://user-images.githubusercontent.com/67062356/166250284-ee3ba7e2-f7e2-45e8-ac96-130cf74bc5d1.png)
+
+  
+This concluded day 4
+
+## Day 5:
+Day 5 was titled ‘if case for loop and for generate’
+The topics which we were introduced to were
+•	If case constructs(theory)
+•	Incomplete if case(lab)
+•	Incomplete overlapping case(lab)
+•	For loop and for generate(theory)
+•	for loop” and “for generate(lab)
+
+### If case constructs
+•	Procedural if statement
+•	if statement is equivalent to using a continuous assignment with a conditional operator,
+•	assign out = (condition) ? a : b;
+•	However, the procedural if provides new ways to make mistakes.
+•	If output is not assigned for all inputs a latch is inferred
+•	We visualize the outputs obtained for the incomp_if1 with the inferred latch behaviour
+  
+  ![image](https://user-images.githubusercontent.com/67062356/166250546-4b981298-d0b5-45a0-bf4f-69a3abbe8a6d.png)
+  
+  ![image](https://user-images.githubusercontent.com/67062356/166250578-10a25597-cbb8-404e-a5a9-9b3ae8f466be.png)
+
+
+•	Next we see that in incomp_if2 logic the enable to the latch inferred is some combinational logic of i1 & i2
+•	Again this is a case of incomplete if construct
+  
+  ![image](https://user-images.githubusercontent.com/67062356/166250609-9687fbe6-2544-4a3d-97c4-db13040fafc1.png)
+![image](https://user-images.githubusercontent.com/67062356/166250630-506c04f4-f8d0-42a3-84af-7a0c76fbf69b.png)
+
+
+
+### Incomplete overlapping case:
+•	Case statements in Verilog are nearly equivalent to a sequence of if-elseif-else that compares one expression to a list of others. Case statements are more convenient than if statements if there are a large number of cases.
+•	Case statements have no hierarchy unlike if statements
+•	Case statements too infer latches if the assignment is incomplete for different cases
+•	Default statements do not male sure that we wont get any inferred latches
+•	The first case which we compare is incomp_case we see an inferred latch in the output:
+   
+   ![image](https://user-images.githubusercontent.com/67062356/166250684-465097a3-fae5-4d8b-a1dc-46f206ac262f.png)
+![image](https://user-images.githubusercontent.com/67062356/166250703-b111880c-f680-43ff-84a7-9097dcddc720.png)
+
+
+•	Next we see the logic of comp_case without any inferred latches:
+  
+  ![image](https://user-images.githubusercontent.com/67062356/166250721-87d57bd6-f556-4d23-aa05-7a33a360d887.png)
+
+![image](https://user-images.githubusercontent.com/67062356/166250742-88902cc6-ba48-4009-ac4c-3edc910a6fb9.png)
+
+
+•	We see that in case of partial assignment too latches are inferred if we are not careful
+  
+  ![image](https://user-images.githubusercontent.com/67062356/166250764-f6844015-df22-4c2f-b9a9-9e4dc6ff6a87.png)
+  ![image](https://user-images.githubusercontent.com/67062356/166250808-411b851e-97bf-4205-9aa4-8a91e6512dc7.png)
+
+
+•	Next we see what bad coding style does to a synthesis and simulation mismatch:
+•	We use bad_case.v
+•	We see the inferred design, the rtl output and the netlist output:
+
+![image](https://user-images.githubusercontent.com/67062356/166250847-2a0a5bec-87ab-45b6-b147-558542b0ca43.png)
+![image](https://user-images.githubusercontent.com/67062356/166250862-34a73f77-9973-4426-8e67-96fac1a3b518.png)
+![image](https://user-images.githubusercontent.com/67062356/166250883-15216e6c-3dd2-4a52-9751-60698ca8d031.png)
+
+
+   
+### For loop and for generate:
+•	Now we the difference between for loop and for generate loop:
+•	For loop is used for evaluation of hardware within an always block
+•	For generate loop is used outside an always block for multiple instantiation of a component or module
+ 
+ ![image](https://user-images.githubusercontent.com/67062356/166250924-fdb03be2-6d25-4f79-b5aa-781e537618d2.png)
+
+![image](https://user-images.githubusercontent.com/67062356/166250949-c55a7c91-a85f-42d0-b9dc-61b3a71b75c5.png)
+
+ 
+
+•	We see the usage of for loop in the demux output and compare it with the case output:
+  
+  
+  ![image](https://user-images.githubusercontent.com/67062356/166250980-8aa2f5ce-bd9e-440b-bdc7-d6792ebfd892.png)
+![image](https://user-images.githubusercontent.com/67062356/166251030-cb1869a6-99d3-4062-8206-7077ab50c329.png)
+
+
+•	We see the usage of for loop in mux output:  
+
+![image](https://user-images.githubusercontent.com/67062356/166251056-b4ae88a3-398a-4815-aac9-64ade90f0736.png)
+
+
+•	Finally we see the usage of ripple carry adder in the for generate output:
+   ![image](https://user-images.githubusercontent.com/67062356/166251088-37f027a9-8ff8-4d51-881c-0d9cf92eaffa.png)
+![image](https://user-images.githubusercontent.com/67062356/166251108-59a89991-a7ed-422c-ab11-0663e4747332.png)
+
+![image](https://user-images.githubusercontent.com/67062356/166251120-6a5adeaf-64e2-44ad-a974-1ac96a208719.png)
+
+
+•	This concludes Day 5 and the workshop
+
+
+
+
 
