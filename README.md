@@ -2,7 +2,14 @@
 
 # RTL-design-using-Verilog-with-SKY130-Technology
 a Workshop by Kunal Ghosh and VSDIAT
-## Day 1:
+Table of Contents:
+[Day 1 Introduction to Open-Source simulator Iverilog](## Day-1:)
+Day 2 Timing libs, hierarchical vs flat synthesis and efficient flop coding styles
+Day 3 combinational and sequential optimisations
+Day 4 GLS blocking vs non blocking and synthesis-simulation
+Day 5 if case for loop and for generate
+
+## Day-1:
 ### Introduction to Open-Source simulator Iverilog:
 We were introduced to the tool iverilog along with the concepts of simulation, simulator, design, test bench and the vcd file(value change dump)
 
