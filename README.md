@@ -5,10 +5,10 @@ a Workshop by Kunal Ghosh and VSDIAT
 
 Table of Contents:
 - [Day 1 Introduction to Open-Source simulator Iverilog](#day-1)
--.[Day 2 Timing libs, hierarchical vs flat synthesis and efficient flop coding styles]
--.[Day 3 combinational and sequential optimisations]
--.[Day 4 GLS blocking vs non blocking and synthesis-simulation]
--.[Day 5 if case for loop and for generate]
+-.[Day 2 Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#day-2)
+-.[Day 3 combinational and sequential optimisations](#day-3)
+-.[Day 4 GLS blocking vs non blocking and synthesis-simulation](#day-4)
+-.[Day 5 if case for loop and for generate](#day-5)
 
 ## Day-1:
 ### Introduction to Open-Source simulator Iverilog:
@@ -112,7 +112,7 @@ Next we created the netlist Verilog file for the synthesized design, we used the
 We analysed the different parts of the netlist file and their meanings
 #### This concluded the first day of the workshop.
 
-## Day 2:
+## Day-2:
 Day 2 was titled ‘ Timing libs, hierarchical vs flat synthesis and efficient flop coding styles’
 The topics which we were introduced to were 
 •	Introduction to timing .libs
@@ -283,7 +283,7 @@ o	When one signals reach a combinational ckt and the others do not and hence the
 
 This ends workshop day 2
 
-## Day 3:
+## Day-3:
 Day 3 was titled ‘combinational and sequential optimisations’
 The topics which we were introduced to were
 •	Introduction to Optimisations(theory)
@@ -410,7 +410,7 @@ Without hierarchial design:
 
 This completes Day 3
 
-## Day 4:
+## Day-4:
 Day 4 was titled ‘GLS blocking vs non blocking and synthesis-simulation’
 The topics which we were introduced to were
 •	GLS Synthesis-Simulation mismatch and blocking-non blocking statements(theory)
@@ -462,7 +462,7 @@ Now we see a synthesis simulation mismatch due to use of blocking statements in 
   
 This concluded day 4
 
-## Day 5:
+## Day-5:
 Day 5 was titled ‘if case for loop and for generate’
 The topics which we were introduced to were
 •	If case constructs(theory)
