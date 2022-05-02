@@ -5,10 +5,10 @@ a Workshop by Kunal Ghosh and VSDIAT
 
 Table of Contents:
 - [Day 1 Introduction to Open-Source simulator Iverilog](#day-1)
--.[Day 2 Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#day-2)
--.[Day 3 combinational and sequential optimisations](#day-3)
--.[Day 4 GLS blocking vs non blocking and synthesis-simulation](#day-4)
--.[Day 5 if case for loop and for generate](#day-5)
+- [Day 2 Timing libs, hierarchical vs flat synthesis and efficient flop coding styles](#day-2)
+- [Day 3 combinational and sequential optimisations](#day-3)
+- [Day 4 GLS blocking vs non blocking and synthesis-simulation](#day-4)
+- [Day 5 if case for loop and for generate](#day-5)
 
 ## Day-1:
 ### Introduction to Open-Source simulator Iverilog:
